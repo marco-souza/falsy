@@ -58,6 +58,8 @@ class OperatorLoader:
                     value = self.param_in_body(req, spec, param)
                 elif in_ == 'header':
                     value = self.param_in_header(req, spec, param)
+                elif in_ == 'request' and name == 'remote_addr':
+                    value = req.remote_addr
                 else:
                     value = None
 
